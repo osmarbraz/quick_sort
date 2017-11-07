@@ -57,7 +57,7 @@ public class Principal {
      * Slide 68 
      * T(n) = T(k) + T(n−k−1) + Theta(n+1) 
      * Complexidade de tempo no pior caso Theta(n^2) 
-     * Complexidade de tempo melhor caso Omega(n log n)
+     * Complexidade de tempo melhor caso Theta(n log n)
      *
      * @param A Vetor com os dados
      * @param p Início do vetor
