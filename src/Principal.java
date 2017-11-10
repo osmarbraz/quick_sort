@@ -15,8 +15,8 @@ public class Principal {
     /**
      * Realiza a troca de posição de dois elementos do vetor.
      * @param A Vetor que contem os dados
-     * @param i Primeira posição de torca
-     * @param j Segunda posição de torca
+     * @param i Primeira posição de troca
+     * @param j Segunda posição de troca
      */
     public static void troca(int[] A, int i, int j) {
         int aux = A[i];
@@ -92,6 +92,7 @@ public class Principal {
             System.out.println((i) + " - " + A[i]);
         }
 
+        //Ordena o vetor A de p até r
         quicksort(A, p, r);
 
         System.out.println("Depois: ");
