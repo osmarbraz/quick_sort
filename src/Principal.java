@@ -4,7 +4,18 @@
  * Programa de Pós-Graduação em Ciências da Computação - PROPG
  * Disciplinas: Projeto e Análise de Algoritmos
  * Prof Alexandre Gonçalves da Silva 
- * Baseado nos slides da aula 01/09/2017 
+ *
+ * Baseado nos slides 68 da aula 01/09/2017 
+ *
+ * Página 123 Cormen 3 ed
+ *
+ * Algoritmo QuickSort
+ *
+ * Atenção:
+ * Vetor em java inicia em 0, os algoritmos consideram início em 1.
+ * A subtraçào de -1 ocorre somente no local de acesso ao vetor ou matriz 
+ * para manter a compatibilidade entre os algoritmos.
+ * 
  */
 
 /**
@@ -14,14 +25,14 @@ public class Principal {
 
     /**
      * Realiza a troca de posição de dois elementos do vetor.
-     * @param A Vetor que contem os dados
+     * @param A Vetor que contém os dados
      * @param i Primeira posição de troca
      * @param j Segunda posição de troca
      */
     public static void troca(int[] A, int i, int j) {
-        int aux = A[i];
-        A[i] = A[j];
-        A[j] = aux;
+        int aux = A[i-1];
+        A[i-1] = A[j-1];
+        A[j-1] = aux;
     }
 
     /**
@@ -37,10 +48,10 @@ public class Principal {
      */
     public static int particione(int A[], int p, int r) {
         //x é o "pivô"
-        int x = A[r];                       //Theta(1)
+        int x = A[r-1];                       //Theta(1)
         int i = p - 1;                      //Theta(1)
         for (int j = p; j <= r - 1; j++) {  //Theta(n)
-            if (A[j] <= x) {                //Theta(n)
+            if (A[j-1] <= x) {                //Theta(n)
                 i = i + 1;                  //O(n)
                 troca(A, i, j);             //O(n)
             }
@@ -82,22 +93,22 @@ public class Principal {
         int A[] = {50, 70, 60, 90, 10, 30, 20, 40};
 
         //Inicio do vetor
-        int p = 0;
+        int p = 1;
         //Fim do vetor
-        int r = A.length - 1;
+        int r = A.length;
 
         System.out.println(">>> QuickSort <<<");
         System.out.println("Original: ");
-        for (int i = 0; i <= r; i++) {
-            System.out.println((i) + " - " + A[i]);
+        for (int i = 0; i < r; i++) {
+            System.out.println((i+1) + " - " + A[i]);
         }
 
         //Ordena o vetor A de p até r
         quicksort(A, p, r);
 
         System.out.println("Depois: ");
-        for (int i = 0; i <= r; i++) {
-            System.out.println((i) + " - " + A[i]);
+        for (int i = 0; i < r; i++) {
+            System.out.println((i+1) + " - " + A[i]);
         }
     }
 }
