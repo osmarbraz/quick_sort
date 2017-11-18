@@ -25,6 +25,7 @@ public class Principal {
 
     /**
      * Realiza a troca de posição de dois elementos do vetor.
+     * 
      * @param A Vetor que contém os dados
      * @param i Primeira posição de troca
      * @param j Segunda posição de troca
@@ -36,32 +37,35 @@ public class Principal {
     }
 
     /**
-     * Particione encontra o pivo.
+     * Particione encontra o pivô.
+     * 
      * Complexidade de tempo Theta(n).
      * T(n) = Theta(2n + 4) + O(2n) = Theta(n) 
+     * 
      * Slide 68 da aula 01/09/2017 
      * 
      * @param A Vetor com os dados
      * @param p Início do vetor
      * @param r Fim do vetor
-     * @return o pivo da troca
+     * @return o pivô da troca
      */
     public static int particione(int A[], int p, int r) {
         //x é o "pivô"
-        int x = A[r-1];                       //Theta(1)
-        int i = p - 1;                      //Theta(1)
-        for (int j = p; j <= r - 1; j++) {  //Theta(n)
-            if (A[j-1] <= x) {                //Theta(n)
-                i = i + 1;                  //O(n)
-                troca(A, i, j);             //O(n)
+        int x = A[r-1];                         //Theta(1)
+        int i = p - 1;                          //Theta(1)
+        for (int j = p; j <= r - 1; j++) {      //Theta(n)
+            if (A[j-1] <= x) {                  //Theta(n)
+                i = i + 1;                      //O(n)
+                troca(A, i, j);                 //O(n)
             }
         }
-        troca(A, i + 1, r);                 //Theta(1)
-        return i + 1;                       //Theta(1)
+        troca(A, i + 1, r);                     //Theta(1)
+        return i + 1;                           //Theta(1)
     }
 
     /**
      * Executa o quicksort recursivo. 
+     * 
      * Algoritmos de ordenação podem ser ou não in-place ou estáveis.
      * Um algoritmo de ordenação é in-place se a memória adicional requerida é 
      * independente do tamanho do vetor que está sendo ordenado.
@@ -92,7 +96,8 @@ public class Principal {
     public static void main(String args[]) {
 
         //Vetor dos dados    
-        int A[] = {50, 70, 60, 90, 10, 30, 20, 40};
+        int A[] = {99, 33, 55, 77, 11, 22, 88, 66, 44}; //Qtde ímpar de elementos
+        //int A[] = {99, 33, 55, 77, 11, 22, 88, 66}; //Qtde par de elementos
 
         //Inicio do vetor
         int p = 1;
@@ -101,16 +106,16 @@ public class Principal {
 
         System.out.println(">>> Algoritmo QuickSort/Ordenação Rápida <<<");
         System.out.println("Original: ");
-        for (int i = 0; i < r; i++) {
-            System.out.println((i+1) + " - " + A[i]);
+        for (int i = 1; i <= r; i++) {
+            System.out.println(i + " - " + A[i-1]);
         }
 
         //Ordena o vetor A de p até r
         quicksort(A, p, r);
 
         System.out.println("Depois: ");
-        for (int i = 0; i < r; i++) {
-            System.out.println((i+1) + " - " + A[i]);
+        for (int i = 1; i <= r; i++) {
+            System.out.println(i + " - " + A[i-1]);
         }
     }
 }
