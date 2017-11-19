@@ -7,7 +7,7 @@
  *
  * Baseado nos slides 68 da aula 01/09/2017 
  *
- * Página 123 Cormen 3 ed
+ * Página 123 Thomas H. Cormen 3 ed
  *
  * Algoritmo QuickSort/Ordenação Rápida
  *
